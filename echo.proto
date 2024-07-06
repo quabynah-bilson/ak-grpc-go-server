@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package echo;
+
+option go_package = "github.com/quabynah-bilson;pb";
+
+// group for our routes = /echo/***
+service EchoService {
+  rpc EchoMessage(EchoRequest) returns (EchoResponse); // /echo/echo-message
+}
+
+message EchoRequest {
+  string name = 1;
+}
+
+message EchoResponse {
+  string greeting = 1;
+}
